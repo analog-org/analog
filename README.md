@@ -6,7 +6,7 @@
 
 <div align="center">
   
-  This is a typescript template for building Discord bots with a dashboard in NextJS, TailwindCSS, Discord.JS, Next-Auth, and Prisma.
+  This is a Discord bot with a dashboard built in NextJS, TailwindCSS, Discord.JS, Next-Auth, and Prisma.
   
   <br />
 </div>
@@ -23,39 +23,21 @@
   <img alt="npm" src="https://img.shields.io/npm/v/next?label=next&style=flat-square">
   <img alt="npm" src="https://img.shields.io/npm/v/next-auth?label=next-auth&style=flat-square">
   <img alt="npm" src="https://img.shields.io/npm/v/turbo?label=Turbo&style=flat-square">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/analog-org/analog-tsx?style=flat-square">
-  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/w/analog-org/analog-tsx?style=flat-square">
-  <img alt="GitHub issues" src="https://img.shields.io/github/issues/analog-org/analog-tsx?style=flat-square">
+  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/analog-org/analog?style=flat-square">
+  <img alt="GitHub commit activity" src="https://img.shields.io/github/commit-activity/w/analog-org/analog?style=flat-square">
+  <img alt="GitHub issues" src="https://img.shields.io/github/issues/analog-org/analog?style=flat-square">
 </div>
 
 <div align="center">
   <img alt="Discord" src="https://img.shields.io/discord/762378948084498482?label=Discord&logo=discord&style=for-the-badge">
 </div>
 
-# Discord Bot Features
-- Discord.JS v14
-- Typescript
-- Uses functions and ESM modules instead of classes
-- [VSCode Extension](https://marketplace.visualstudio.com/items?itemName=BossDaily.analog-ts-snippets&ssr=false)
-- Command Handler
-- Context Menu Handler
-- Event Handler
-- Button handler
-- Modal handler
-- Select Menu Handler
-
-
-# Dashboard features
-- NextJS
-- Typescript
-- [Authjs](https://authjs.dev/) - For easy authentication
-- TailwindCSS
 
 # Getting Started 
 ## Initial Setup
 ```sh
-git clone https://github.com/analog-org/analog-tsx.git
-cd analog-tsx
+git clone https://github.com/analog-org/analog.git
+cd analog
 npm i
 ```
 ## ENV Variables
