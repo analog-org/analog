@@ -8,6 +8,8 @@
   
   This is a Discord bot with a dashboard built in NextJS, TailwindCSS, Discord.JS, Next-Auth, and Prisma.
   
+  ⚠️ Warning, this is in pre aplpha alpha, we don't even have any commands for the bot
+Stay tuned for updates
   <br />
 </div>
 <div align="center">
