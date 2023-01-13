@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 
 
 export const deleteCMD = (clientId: string) => {
-  const rest = new REST({ version: "9" }).setToken(process.env.TOKEN!);
+  const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_BOT_TOKEN!);
 
   rest
     .put(Routes.applicationCommands(clientId), { body: [] })

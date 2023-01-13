@@ -11,7 +11,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 export const regCMD = (clientId: string) => {
-  // dotenv dependancy
+
 
   //Gets slash commands
   const commands: any[] = [];
@@ -20,7 +20,7 @@ export const regCMD = (clientId: string) => {
     .readdirSync(cmdPath)
     .filter((file) => file.endsWith(".js"));
 
-  const rest = new REST({ version: "9" }).setToken(process.env.TOKEN!);
+  const rest = new REST({ version: "9" }).setToken(process.env.DISCORD_BOT_TOKEN!);
 
   for (const file of cmdFiles) {
     const filePath = path.join(cmdPath, file);
