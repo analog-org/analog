@@ -13,13 +13,14 @@ import perms from "../utils/bitfield";
 import { Avatar, Dropdown, Navbar } from "flowbite-react";
 import GuildContainer from "../components/Guild/GuildContainer";
 import GuildCard from "../components/Guild/GuildCard";
+import NavBar from "../components/Navbar";
 
 const index: NextPage = () => {
   const { data: session } = useSession();
   if (session) {
     return (
       <div className="bg-gray-800">
-        {"w you're signed in"}
+        <NavBar />
       </div>
     );
   } else {
