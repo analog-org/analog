@@ -19,14 +19,17 @@ const index: NextPage = () => {
   const { data: session } = useSession();
   if (session) {
     return (
-      <div className="bg-gray-800">
+      <div>
         <NavBar />
+        <header>
+          <h1>fortnite</h1>
+        </header>
       </div>
     );
   } else {
     return (
       <div>
-        {"l you're not signed in"}
+        <NavBar />
       </div>
     );
   }
