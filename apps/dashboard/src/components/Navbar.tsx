@@ -56,10 +56,10 @@ const NavBar: NextPage = () => {
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse>
-            <Navbar.Link href="" active={true}>
+            <Navbar.Link href="">
               Home
             </Navbar.Link>
-            <Navbar.Link href="/dashboard" active={true}>
+            <Navbar.Link href="/dashboard">
               Dashboard
             </Navbar.Link>
           </Navbar.Collapse>
