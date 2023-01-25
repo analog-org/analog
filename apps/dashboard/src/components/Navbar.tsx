@@ -14,18 +14,15 @@ const NavBar: NextPage = () => {
   if (session) {
     return (
       <div>
-        <Navbar fluid={true} rounded={true}>
-          <Navbar.Brand href="https://flowbite.com/">
+        <Navbar fluid={true}>
+          <Navbar.Brand href="">
             <Image
-              src="https://avatars.githubusercontent.com/u/110413696?s=200&v=4"
-              className="mr-5 h-6 sm:h-9 rounded-xl"
-              alt="Flowbite Logo"
-              width={36}
-              height={36}
+              src="https://media.discordapp.net/attachments/1037032323276877945/1065094779509166081/Analog.png?width=850&height=850"
+              className="mr-5 h-6 sm:h-14 rounded-xl"
+              alt="Analog Logo"
+              width={48}
+              height={48}
             />
-            <span className="ml-3 self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-              Analog
-            </span>
           </Navbar.Brand>
           <div className="flex md:order-2">
             <Dropdown
@@ -42,7 +39,6 @@ const NavBar: NextPage = () => {
               }
               placement="bottom-end"
             >
-              
               <Dropdown.Header>
                 <span className="block text-sm">
                   {session.discordUser.username}
@@ -56,12 +52,8 @@ const NavBar: NextPage = () => {
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse>
-            <Navbar.Link href="">
-              Home
-            </Navbar.Link>
-            <Navbar.Link href="/dashboard">
-              Dashboard
-            </Navbar.Link>
+            <Navbar.Link href="">Home</Navbar.Link>
+            <Navbar.Link href="/dashboard">Dashboard</Navbar.Link>
           </Navbar.Collapse>
         </Navbar>
       </div>
@@ -69,18 +61,15 @@ const NavBar: NextPage = () => {
   } else {
     return (
       <div>
-        <Navbar fluid={true} rounded={true}>
-          <Navbar.Brand href="/">
+        <Navbar fluid={true}>
+          <Navbar.Brand href="">
             <Image
-              src="https://avatars.githubusercontent.com/u/110413696?s=200&v=4"
-              className="mr-3 h-6 sm:h-9 rounded-xl"
-              alt="Flowbite Logo"
-              width={36}
-              height={36}
+              src="https://media.discordapp.net/attachments/1037032323276877945/1065094779509166081/Analog.png?width=850&height=850"
+              className="mr-5 h-6 sm:h-14 rounded-xl"
+              alt="Analog Logo"
+              width={48}
+              height={48}
             />
-            <span className="self-center whitespace-nowrap text-xl font-semibold dark:text-white">
-              Analog
-            </span>
           </Navbar.Brand>
           <div className="flex md:order-2">
             <Dropdown
@@ -95,12 +84,8 @@ const NavBar: NextPage = () => {
             <Navbar.Toggle />
           </div>
           <Navbar.Collapse>
-            <Navbar.Link href="">
-              Home
-            </Navbar.Link>
-            <Navbar.Link href="/dashboard">
-              Dashboard
-            </Navbar.Link>
+            <Navbar.Link href="">Home</Navbar.Link>
+            <Navbar.Link href="/dashboard">Dashboard</Navbar.Link>
           </Navbar.Collapse>
         </Navbar>
       </div>
