@@ -15,7 +15,7 @@ import GuildContainer from "../components/Guild/GuildContainer";
 import GuildCard from "../components/Guild/GuildCard";
 import NavBar from "../components/Navbar";
 import styles from "../styles/Home.module.css";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 
 const index: NextPage = () => {
   const { data: session } = useSession();
@@ -35,7 +35,7 @@ const index: NextPage = () => {
             Typescript with DiscordJS. It is currently in development.
           </p>
           <div className="flex flex-wrap justify-center">
-            <a href="https://discord.gg/XsXC3pAhBY"> 
+            <a href="https://discord.gg/XsXC3pAhBY">
               <button className="px-8 py-3 m-2 text-lg font-semibold rounded-full dark:bg-indigo-600 hover:dark:bg-indigo-600 dark:text-white">
                 Discord
               </button>
@@ -49,9 +49,7 @@ const index: NextPage = () => {
           </div>
         </div>
       </section>
-      <div className="h-96 bg-gray-800 text-gray-100">
-
-      </div>
+      <div className="h-96 bg-gray-800 text-gray-100"></div>
       <Footer />
     </div>
   );
