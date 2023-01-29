@@ -10,7 +10,7 @@ type LayoutProps = {
 
 const DashboardLayout = ({ children }: LayoutProps) => {
   return (
-    <div className="bg-gray-800">
+    <div className="bg-zinc-800">
       <DashNavbar />
       <div className="flex">
         <SideBar />
