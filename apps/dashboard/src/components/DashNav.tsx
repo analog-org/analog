@@ -1,7 +1,13 @@
 import { NextPage } from "next";
 import { ReactNode } from "react";
 import Image from "next/image";
-import { Avatar, Dropdown, Navbar } from "flowbite-react";
+import {
+  Avatar,
+  CustomFlowbiteTheme,
+  Dropdown,
+  Navbar,
+  Flowbite,
+} from "flowbite-react";
 import { authOptions } from "../pages/api/auth/[...nextauth]";
 import { useSession, signIn, signOut } from "next-auth/react";
 
@@ -14,7 +20,7 @@ const DashNavbar: NextPage = () => {
   if (session) {
     return (
       <div>
-        <Navbar fluid={true} className="bg-zinc-900">
+        <Navbar fluid style={{backgroundColor: '#18181b'}}>
           <Navbar.Brand href="">
             <Image
               src="https://media.discordapp.net/attachments/1037032323276877945/1065094779509166081/Analog.png?width=850&height=850"
