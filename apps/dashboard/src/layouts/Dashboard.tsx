@@ -1,7 +1,7 @@
-import DashNavbar from "../components/DashNav";
-import MainFooter from "../components/Footer";
+import DashNavbar from "../components/Dashboard/DashNav";
+import MainFooter from "../components/Dashboard/Footer";
 import NavBar from "../components/Navbar";
-import SideBar from "../components/Sidebar";
+import SideBar from "../components/Dashboard/Sidebar";
 import { ReactNode } from "react";
 
 type LayoutProps = {
@@ -14,7 +14,7 @@ const DashboardLayout = ({ children }: LayoutProps) => {
       <DashNavbar />
       <div className="flex">
         <SideBar />
-        <div className="flex-grow">{children}</div>
+        <div className="flex-grow p-4">{children}</div>
       </div>
     </div>
   );

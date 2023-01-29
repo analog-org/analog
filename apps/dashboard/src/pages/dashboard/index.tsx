@@ -22,7 +22,7 @@ const Home: NextPage = ({
   const { data: session } = useSession();
   if (session) {
     return (
-      <div>
+      <div className="bg-gray-800">
         <NavBar />
         <GuildContainer>
           {guilds.map((gld: guild) => {

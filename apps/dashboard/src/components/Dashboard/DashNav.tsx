@@ -8,7 +8,7 @@ import {
   Navbar,
   Flowbite,
 } from "flowbite-react";
-import { authOptions } from "../pages/api/auth/[...nextauth]";
+import { authOptions } from "../../pages/api/auth/[...nextauth]";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 type Props = {

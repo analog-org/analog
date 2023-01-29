@@ -6,12 +6,12 @@ import {
 import { ReactNode } from "react";
 import Image from "next/image";
 import { Avatar, Dropdown, Sidebar } from "flowbite-react";
-import { authOptions } from "../pages/api/auth/[...nextauth]";
+import { authOptions } from "../../pages/api/auth/[...nextauth]";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 const SideBar: NextPage = () => {
   return (
-    <div className="w-fit">
+    <div className="w-fit rounded-none">
       <Sidebar aria-label="Sidebar with logo branding example">
         <Sidebar.Logo
           href="https://avatars.githubusercontent.com/u/110413696?s=200&v=4"

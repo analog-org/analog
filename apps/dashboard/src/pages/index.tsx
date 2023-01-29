@@ -15,7 +15,7 @@ import GuildContainer from "../components/Guild/GuildContainer";
 import GuildCard from "../components/Guild/GuildCard";
 import NavBar from "../components/Navbar";
 import styles from "../styles/Home.module.css";
-import Footer from "../components/Footer";
+import Footer from "../components/Dashboard/Footer";
 
 const index: NextPage = () => {
   const { data: session } = useSession();
