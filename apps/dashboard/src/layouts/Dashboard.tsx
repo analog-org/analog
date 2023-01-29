@@ -1,3 +1,4 @@
+import DashNavbar from "../components/DashNav";
 import MainFooter from "../components/Footer";
 import NavBar from "../components/Navbar";
 import SideBar from "../components/Sidebar";
@@ -10,7 +11,7 @@ type LayoutProps = {
 const DashboardLayout = ({ children }: LayoutProps) => {
   return (
     <div className="bg-gray-800">
-      <NavBar />
+      <DashNavbar />
       <div className="flex">
         <SideBar />
         <div className="flex-grow">{children}</div>
