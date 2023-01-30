@@ -14,7 +14,7 @@ const DashboardLayout = ({ children }: LayoutProps) => {
       <DashNavbar />
       <div className="flex">
         <SideBar />
-        <div className="flex-grow p-4">{children}</div>
+        <div className="flex-grow p-6">{children}</div>
       </div>
     </div>
   );
