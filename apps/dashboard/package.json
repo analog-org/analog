@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 22548",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -20,21 +20,22 @@
     "apollo-server-micro": "^3.11.1",
     "autoprefixer": "^10.4.13",
     "database": "*",
-    "discord-api-types": "^0.37.22",
+    "discord-api-types": "^0.37.31",
     "dotenv": "^16.0.3",
+    "eslint-config-next": "^13.1.6",
     "fast-average-color": "^9.3.0",
-    "flowbite": "^1.5.3",
-    "flowbite-react": "^0.3.5",
+    "flowbite": "^1.6.3",
+    "flowbite-react": "^0.3.8",
     "framer-motion": "^7.6.4",
     "graphql": "^16.6.0",
     "micro-cors": "^0.1.1",
-    "next": "^12.3.2",
+    "next": "^13.1.6",
     "next-auth": "^4.15.0",
     "postcss": "^8.4.18",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-select": "^5.7.0",
-    "tailwindcss": "^3.2.1",
-    "typescript": "^4.8.4"
+    "tailwindcss": "^3.2.5",
+    "typescript": "^4.9.5"
   }
 }
