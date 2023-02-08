@@ -1,6 +1,6 @@
 import DashNavbar from "../components/Dashboard/DashNav";
-import MainFooter from "../components/Dashboard/Footer";
-import NavBar from "../components/Navbar";
+import MainFooter from "../../app/Footer";
+import NavBar from "../../app/Navbar";
 import SideBar from "../components/Dashboard/Sidebar";
 import { ReactNode } from "react";
 
