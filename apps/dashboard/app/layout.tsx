@@ -1,5 +1,8 @@
 import Provider from "./provider";
-import './globals.css';
+import "./globals.css";
+import { Flowbite } from "flowbite-react";
+import FlowbiteProvider from "./flowbiteprovider";
+import { customtheme as theme } from "../app/theme";
 
 export default function RootLayout({
   // Layouts must accept a children prop.
@@ -11,7 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Provider>{children}</Provider>
+        <FlowbiteProvider>
+          <Provider>{children}</Provider>
+        </FlowbiteProvider>
       </body>
     </html>
   );
