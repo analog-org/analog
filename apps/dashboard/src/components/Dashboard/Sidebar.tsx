@@ -17,6 +17,7 @@ const SideBar: NextPage = () => {
           href="https://avatars.githubusercontent.com/u/110413696?s=200&v=4"
           img="https://avatars.githubusercontent.com/u/110413696?s=200&v=4"
           imgAlt="Analog logo"
+          className="rounded-full"
         >
           Analog
         </Sidebar.Logo>
