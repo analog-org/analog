@@ -1,3 +1,5 @@
+"use client"
+
 import { NextPage } from "next";
 import { ReactNode } from "react";
 import Image from "next/image";
@@ -5,7 +7,7 @@ import { Avatar, Dropdown, Navbar, Footer } from "flowbite-react";
 import { authOptions } from "../src/pages/api/auth/[...nextauth]";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-const MainFooter: NextPage = () => {
+export default function Component() {
   return (
     <div>
       <Footer container={true} className="rounded-none">
@@ -39,5 +41,3 @@ const MainFooter: NextPage = () => {
     </div>
   );
 };
-
-export default MainFooter;

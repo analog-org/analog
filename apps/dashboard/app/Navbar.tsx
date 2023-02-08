@@ -1,3 +1,5 @@
+"use client";
+
 import { NextPage } from "next";
 import { ReactNode } from "react";
 import Image from "next/image";
@@ -9,7 +11,7 @@ type Props = {
   children: ReactNode;
 };
 
-const NavBar: NextPage = () => {
+export default function Component() {
   const { data: session } = useSession();
   if (session) {
     return (
@@ -91,6 +93,4 @@ const NavBar: NextPage = () => {
       </div>
     );
   }
-};
-
-export default NavBar;
+}
