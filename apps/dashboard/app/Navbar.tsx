@@ -20,7 +20,7 @@ export default function Component() {
           <Navbar.Brand href="">
             <Image
               src="https://media.discordapp.net/attachments/1037032323276877945/1065094779509166081/Analog.png?width=850&height=850"
-              className="mr-5 h-6 sm:h-14 rounded-xl"
+              className="mr-5 rounded-full"
               alt="Analog Logo"
               width={48}
               height={48}
@@ -33,7 +33,7 @@ export default function Component() {
               label={
                 <Image
                   src={session.discordUser.image_url}
-                  className="mr-5 h-6 sm:h-9 rounded-full"
+                  className="mr-5 rounded-full"
                   alt="Flowbite Logo"
                   width={52}
                   height={52}
