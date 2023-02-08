@@ -7,6 +7,7 @@ const nextConfig = {
       "cdn.discordapp.com",
       "discord.com",
       "avatars.githubusercontent.com",
+      "media.discordapp.net",
     ],
   },
   compiler: {
