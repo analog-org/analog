@@ -1,3 +1,5 @@
+"use client"
+
 import { NextPage } from "next";
 import { ReactNode } from "react";
 import Image from "next/image";
@@ -8,14 +10,14 @@ import {
   Navbar,
   Flowbite,
 } from "flowbite-react";
-import { authOptions } from "../../pages/api/auth/[...nextauth]";
+import { authOptions } from "../../../src/pages/api/auth/[...nextauth]";
 import { useSession, signIn, signOut } from "next-auth/react";
 
 type Props = {
   children: ReactNode;
 };
 
-const DashNavbar: NextPage = () => {
+export default function DashNavbar(){
   const { data: session } = useSession();
   if (session) {
     return (
@@ -24,7 +26,7 @@ const DashNavbar: NextPage = () => {
           <Navbar.Brand href="">
             <Image
               src="https://media.discordapp.net/attachments/1037032323276877945/1065094779509166081/Analog.png?width=850&height=850"
-              className="mr-5 h-6 sm:h-14 rounded-xl"
+              className="mr-5 "
               alt="Analog Logo"
               width={48}
               height={48}
@@ -37,7 +39,7 @@ const DashNavbar: NextPage = () => {
               label={
                 <Image
                   src={session.discordUser.image_url}
-                  className="mr-5 h-6 sm:h-9 rounded-full"
+                  className="mr-5 rounded-full"
                   alt="Flowbite Logo"
                   width={52}
                   height={52}
@@ -98,5 +100,3 @@ const DashNavbar: NextPage = () => {
     );
   }
 };
-
-export default DashNavbar;

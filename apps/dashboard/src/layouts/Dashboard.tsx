@@ -1,7 +1,7 @@
-import DashNavbar from "../components/Dashboard/DashNav";
+import DashNavbar from "../../app/dashboard/[guildid]/DashNav";
 import MainFooter from "../../app/Footer";
 import NavBar from "../../app/Navbar";
-import SideBar from "../components/Dashboard/Sidebar";
+import SideBar from "../../app/dashboard/[guildid]/Sidebar";
 import { ReactNode } from "react";
 
 type LayoutProps = {
