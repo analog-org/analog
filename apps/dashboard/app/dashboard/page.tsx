@@ -15,6 +15,11 @@ import GuildContainer from "./(Guild)/GuildContainer";
 import GuildCard from "./(Guild)/GuildCard";
 import NavBar from "../Navbar";
 
+export const metadata = {
+  title: "Dashboard",
+  description: "Dashboard",
+}
+
 export default async function Home() {
 
   const session = await getServerSession(authOptions);
