@@ -1,13 +1,14 @@
-"use client"
+"use client";
 
-import { GetServerSideProps, InferGetServerSidePropsType, NextPage } from "next";
-import { ReactNode } from "react";
-import Image from "next/image";
 import { Avatar, Dropdown, Sidebar } from "flowbite-react";
-import { authOptions } from "../../../src/pages/api/auth/[...nextauth]";
-import { useSession, signIn, signOut } from "next-auth/react";
+import Link from "next/link";
 
-export default function SideBar()  {
+/* interface Props {
+  pages: string[]
+
+} */
+export default function SideBar({ pages, id }) {
+  const balls = ["embed", "test", "test2", "test3"];
   return (
     <div className="w-fit rounded-none">
       <Sidebar aria-label="Sidebar with logo branding example">
@@ -22,10 +23,18 @@ export default function SideBar()  {
         <Sidebar.Items>
           <Sidebar.ItemGroup>
             <Sidebar.Item href="#">Dashboard</Sidebar.Item>
+            {pages.map((page) => (
+              <Link href={`./${id}/${page}`}>
+                <div className="flex text-left  rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-zinc-800">
+                  <p className=" px-3">{page}</p>
+                  
+                </div>
+              </Link>
+            ))}
             <Sidebar.Item href="./embed">Embed Builder</Sidebar.Item>
           </Sidebar.ItemGroup>
         </Sidebar.Items>
       </Sidebar>
     </div>
   );
-};
+}
