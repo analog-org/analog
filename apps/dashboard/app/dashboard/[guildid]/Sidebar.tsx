@@ -22,16 +22,14 @@ export default function SideBar({ pages, id }) {
         </Sidebar.Logo>
         <Sidebar.Items>
           <Sidebar.ItemGroup>
-            <Sidebar.Item href="#">Dashboard</Sidebar.Item>
+            <Sidebar.Item href={`./${id}`}>Dashboard</Sidebar.Item>
             {pages.map((page) => (
               <Link href={`./${id}/${page}`}>
                 <div className="flex text-left  rounded-lg p-2 text-base font-normal text-gray-900 hover:bg-gray-100 dark:text-white dark:hover:bg-zinc-800">
                   <p className=" px-3">{page}</p>
-                  
                 </div>
               </Link>
             ))}
-            <Sidebar.Item href="./embed">Embed Builder</Sidebar.Item>
           </Sidebar.ItemGroup>
         </Sidebar.Items>
       </Sidebar>
