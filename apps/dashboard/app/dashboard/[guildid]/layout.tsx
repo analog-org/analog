@@ -11,7 +11,7 @@ import fs, { read, readdirSync } from "fs";
 export default function DashboardLayout ({ children, params }){
   const { guildid } = params;
   const filelist = path.join(process.cwd(), "app/dashboard/[guildid]");
-  const componentFiles = fs.readdirSync(filelist)
+  const componentFiles = fs.readdirSync(filelist).filter((file) => !file.endsWith(".tsx"));
   const components = []
 
   for (const file of componentFiles) {
