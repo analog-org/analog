@@ -34,7 +34,7 @@ export default async function DashboardLayout({ children, params }) {
     }
   );
   const guilds = await guildFetch.json();
-  
+
   const botGuildsFetch = await fetch(
     `https://discord.com/api/v10/users/@me/guilds`,
     {
@@ -46,10 +46,10 @@ export default async function DashboardLayout({ children, params }) {
   );
   const botGuilds = await botGuildsFetch.json();
 
-  guilds.map((gld: guild) => {
+  const checkGuildId = guilds.map((gld: guild) => {
     const serverPerms = perms(gld.permissions);
     if (serverPerms.includes("MANAGE_GUILD")) {
-
+      return gld.id;
     }
   });
 
