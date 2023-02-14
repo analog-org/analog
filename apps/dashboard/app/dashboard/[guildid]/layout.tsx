@@ -46,27 +46,43 @@ export default async function DashboardLayout({ children, params }) {
     }
   );
   const botGuilds: APIGuild[] = await botGuildsFetch.json();
-  
-  const userGuilds = []
 
-  guilds.map((gld: APIGuild) => {
-    const serverPerms = perms(gld.permissions);
-    if (serverPerms.includes("MANAGE_GUILD")) {
-      if (botGuilds.some((botGuild: APIGuild) => botGuild.id === gld.id)) {
-        userGuilds.push(gld)
+  console.log(botGuilds);
+
+  const userGuilds: APIGuild[] = [];
+
+  if (Array.isArray(guilds)) {
+    guilds.map((gld: APIGuild) => {
+      const serverPerms = perms(gld.permissions);
+      if (serverPerms.includes("MANAGE_GUILD")) {
+        if (botGuilds.some((botGuild: APIGuild) => botGuild.id === gld.id)) {
+          userGuilds.push(gld);
+        }
       }
-    }
-  });
+    });
+  }
 
-  
-
-  return (
-    <div className="bg-zinc-800">
-      <DashNavbar />
-      <div className="flex">
-        <SideBar pages={components} id={guildid} />
-        <div className="flex-grow p-6">{children}</div>
+  console.log(userGuilds);
+  if (userGuilds.some((userGld: APIGuild) => userGld.id === guildid)) {
+    return (
+      <div className="bg-zinc-800">
+        <DashNavbar />
+        <div className="flex">
+          <SideBar pages={components} id={guildid} />
+          <div className="flex-grow p-6">{children}</div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="bg-zinc-800">
+        <DashNavbar />
+        <div className="flex">
+          <div className="flex-grow p-6">
+            You are not in this guild or you do not have admin access
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
