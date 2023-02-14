@@ -9,6 +9,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 import fs, { read, readdirSync } from "fs";
 import perms from "../../../src/utils/bitfield";
+import { APIGuild } from "discord-api-types/v10";
 
 const filelist = path.join(process.cwd(), "app/dashboard/[guildid]");
 const componentFiles = fs
@@ -33,8 +34,8 @@ export default async function DashboardLayout({ children, params }) {
       },
     }
   );
-  const guilds = await guildFetch.json();
-  
+  const guilds: APIGuild[] = await guildFetch.json();
+
   const botGuildsFetch = await fetch(
     `https://discord.com/api/v10/users/@me/guilds`,
     {
@@ -44,14 +45,20 @@ export default async function DashboardLayout({ children, params }) {
       },
     }
   );
-  const botGuilds = await botGuildsFetch.json();
+  const botGuilds: APIGuild[] = await botGuildsFetch.json();
+  
+  const userGuilds = []
 
-  guilds.map((gld: guild) => {
+  guilds.map((gld: APIGuild) => {
     const serverPerms = perms(gld.permissions);
     if (serverPerms.includes("MANAGE_GUILD")) {
-
+      if (botGuilds.some((botGuild: APIGuild) => botGuild.id === gld.id)) {
+        userGuilds.push(gld)
+      }
     }
   });
+
+  
 
   return (
     <div className="bg-zinc-800">
