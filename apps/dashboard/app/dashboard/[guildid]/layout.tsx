@@ -47,8 +47,6 @@ export default async function DashboardLayout({ children, params }) {
   );
   const botGuilds: APIGuild[] = await botGuildsFetch.json();
 
-  console.log(botGuilds);
-
   const userGuilds: APIGuild[] = [];
 
   if (Array.isArray(guilds)) {
@@ -62,7 +60,6 @@ export default async function DashboardLayout({ children, params }) {
     });
   }
 
-  console.log(userGuilds);
   if (userGuilds.some((userGld: APIGuild) => userGld.id === guildid)) {
     return (
       <div className="bg-zinc-800">
@@ -78,6 +75,7 @@ export default async function DashboardLayout({ children, params }) {
       <div className="bg-zinc-800">
         <DashNavbar />
         <div className="flex">
+          <SideBar pages={components} id={guildid} />
           <div className="flex-grow p-6">
             You are not in this guild or you do not have admin access
           </div>
