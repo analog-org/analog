@@ -51,7 +51,7 @@ npm i
 
 1. Create an APP on [Discord Developer Portal](https://discord.com/developers/applications)
 2. Create a bot user and [copy the token](https://discordjs.guide/preparations/setting-up-a-bot-application.html#your-bot-s-token)
-3. Put the token you copied in the `DISCORD_BOT_TOKEN` variable in the `.env` file
+3. Put the token you copied in the `DISCORD_TOKEN` variable in the `.env` file
 4. To get the `DISCORD_CLIENT_ID` and `NEXT_PUBLIC_DISCORD_CLIENT_ID` values, go to the OAuth2 tab in your application and copy the `Client ID` value
 ![image](https://media.discordapp.net/attachments/1004769215347175484/1059533910599540767/image.png)
 5. To get the `DISCORD_CLIENT_SECRET` value, go to the OAuth2 tab in your application and copy the `Client Secret` value (or reset the secret and copy the new one)
@@ -62,7 +62,7 @@ npm i
 ### Your .env file should endup looking like this
 ```js title=".env"
 DISCORD_CLIENT_ID="61266727282091783"
-DISCORD_BOT_TOKEN="OTI2Nnrjh9ia03ndNTIw.GjSdq1.bh2983-34yhtg9wasn9iy34ifgkaopneianwh"
+DISCORD_TOKEN="OTI2Nnrjh9ia03ndNTIw.GjSdq1.bh2983-34yhtg9wasn9iy34ifgkaopneianwh"
 NEXT_PUBLIC_DISCORD_CLIENT_ID="61266727282091783"
 DISCORD_CLIENT_SECRET="uqerhgeas2HxewZQfdggK9gl-KLcnbgja"
 NEXTAUTH_URL="http://localhost:3000"

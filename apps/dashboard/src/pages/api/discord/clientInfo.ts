@@ -8,7 +8,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     {
       headers: {
         // @ts-ignore
-        Authorization: `Bot ${process.env.DISCORD_BOT_TOKEN}`,
+        Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
       },
     }
   );

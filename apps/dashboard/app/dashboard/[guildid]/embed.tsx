@@ -179,7 +179,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const botProfileFetch = await fetch(`https://discord.com/api/v10/users/@me`, {
     headers: {
       // @ts-ignore
-      Authorization: `Bot ${process.env.DISCORD_BOT_TOKEN}`,
+      Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
     },
   });
   const botProfile: user = await botProfileFetch.json();
@@ -189,7 +189,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     {
       headers: {
         // @ts-ignore
-        Authorization: `Bot ${process.env.DISCORD_BOT_TOKEN}`,
+        Authorization: `Bot ${process.env.DISCORD_TOKEN}`,
         "Content-Type": "application/json",
       },
       method: "GET",
