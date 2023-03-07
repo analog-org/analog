@@ -9,6 +9,7 @@ import { useSession, signIn, signOut } from "next-auth/react";
 import { getServerSession } from "next-auth/next";
 import fs, { read, readdirSync } from "fs";
 import perms from "../../../src/utils/bitfield";
+import { APIGuild } from "discord-api-types/v10";
 
 const filelist = path.join(process.cwd(), "app/dashboard/[guildid]");
 const componentFiles = fs
@@ -33,7 +34,11 @@ export default async function DashboardLayout({ children, params }) {
       },
     }
   );
+<<<<<<< HEAD
   const guilds = await guildFetch.json();
+=======
+  const guilds: APIGuild[] = await guildFetch.json();
+>>>>>>> 84abc4be9e8af12feaaf8ce796ca7543a6881157
 
   const botGuildsFetch = await fetch(
     `https://discord.com/api/v10/users/@me/guilds`,
@@ -44,22 +49,51 @@ export default async function DashboardLayout({ children, params }) {
       },
     }
   );
-  const botGuilds = await botGuildsFetch.json();
+  const botGuilds: APIGuild[] = await botGuildsFetch.json();
 
+<<<<<<< HEAD
   const checkGuildId = guilds.map((gld: guild) => {
     const serverPerms = perms(gld.permissions);
     if (serverPerms.includes("MANAGE_GUILD")) {
       return gld.id;
     }
   });
+=======
+  const userGuilds: APIGuild[] = [];
 
-  return (
-    <div className="bg-zinc-800">
-      <DashNavbar />
-      <div className="flex">
-        <SideBar pages={components} id={guildid} />
-        <div className="flex-grow p-6">{children}</div>
+  if (Array.isArray(guilds)) {
+    guilds.map((gld: APIGuild) => {
+      const serverPerms = perms(gld.permissions);
+      if (serverPerms.includes("MANAGE_GUILD")) {
+        if (botGuilds.some((botGuild: APIGuild) => botGuild.id === gld.id)) {
+          userGuilds.push(gld);
+        }
+      }
+    });
+  }
+>>>>>>> 84abc4be9e8af12feaaf8ce796ca7543a6881157
+
+  if (userGuilds.some((userGld: APIGuild) => userGld.id === guildid)) {
+    return (
+      <div className="bg-zinc-800">
+        <DashNavbar />
+        <div className="flex">
+          <SideBar pages={components} id={guildid} />
+          <div className="flex-grow p-6">{children}</div>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="bg-zinc-800">
+        <DashNavbar />
+        <div className="flex">
+          <SideBar pages={components} id={guildid} />
+          <div className="flex-grow p-6">
+            You are not in this guild or you do not have admin access
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
