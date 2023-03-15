@@ -34,11 +34,7 @@ export default async function DashboardLayout({ children, params }) {
       },
     }
   );
-<<<<<<< HEAD
-  const guilds = await guildFetch.json();
-=======
   const guilds: APIGuild[] = await guildFetch.json();
->>>>>>> 84abc4be9e8af12feaaf8ce796ca7543a6881157
 
   const botGuildsFetch = await fetch(
     `https://discord.com/api/v10/users/@me/guilds`,
@@ -51,14 +47,6 @@ export default async function DashboardLayout({ children, params }) {
   );
   const botGuilds: APIGuild[] = await botGuildsFetch.json();
 
-<<<<<<< HEAD
-  const checkGuildId = guilds.map((gld: guild) => {
-    const serverPerms = perms(gld.permissions);
-    if (serverPerms.includes("MANAGE_GUILD")) {
-      return gld.id;
-    }
-  });
-=======
   const userGuilds: APIGuild[] = [];
 
   if (Array.isArray(guilds)) {
@@ -71,7 +59,6 @@ export default async function DashboardLayout({ children, params }) {
       }
     });
   }
->>>>>>> 84abc4be9e8af12feaaf8ce796ca7543a6881157
 
   if (userGuilds.some((userGld: APIGuild) => userGld.id === guildid)) {
     return (
