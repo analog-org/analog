@@ -1,5 +1,5 @@
 {
-  "name": "Analog-bot",
+  "name": "analog-bot",
   "version": "1.0.0",
   "main": "dist/index.js",
   "author": "@sapphire",
@@ -19,7 +19,8 @@
     "@sapphire/utilities": "^3.11.0",
     "@skyra/env-utilities": "^1.1.0",
     "colorette": "^2.0.19",
-    "discord.js": "^14.7.1"
+    "discord.js": "^14.7.1",
+    "plugin-manager": "*"
   },
   "devDependencies": {
     "@sapphire/prettier-config": "^1.4.5",
