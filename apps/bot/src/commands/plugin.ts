@@ -1,20 +1,22 @@
 import { ApplyOptions } from '@sapphire/decorators';
-import { Command } from '@sapphire/framework';
-import { Subcommand } from '@sapphire/plugin-subcommands'
- 
+import type { ChatInputCommand } from '@sapphire/framework';
+import { Subcommand } from '@sapphire/plugin-subcommands';
+
 @ApplyOptions<Subcommand.Options>({
 	description: 'For managing the plugin',
+	subcommands: [{ name: 'list', chatInputRun: 'listPlugins',  }]
 })
-export class UserCommand extends Command {
-	public override registerApplicationCommands(registry: Command.Registry) {
+export class UserCommand extends Subcommand {
+	public override registerApplicationCommands(registry: ChatInputCommand.Registry) {
 		registry.registerChatInputCommand((builder) =>
 			builder //
 				.setName(this.name)
 				.setDescription(this.description)
+				.addSubcommand((subcommand) => subcommand.setName('list').setDescription('Lists all plugins'))
 		);
 	}
 
-	public override async chatInputRun(interaction: Command.ChatInputCommandInteraction) {
-		return interaction.reply({ content: 'You managed the command' });
+	public async listPlugins(interaction: Subcommand.ChatInputCommandInteraction) {
+		return await interaction.reply({ content: 'You listed the plugins' });
 	}
 }
