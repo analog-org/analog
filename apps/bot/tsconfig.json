@@ -3,7 +3,8 @@
 	"compilerOptions": {
 		"rootDir": "src",
 		"outDir": "dist",
-		"tsBuildInfoFile": "dist/.tsbuildinfo"
+		"tsBuildInfoFile": "dist/.tsbuildinfo",
+		"noUnusedLocals": false,
 	},
 	"include": ["src", "../../packages/pluginManager.ts"]
 }
