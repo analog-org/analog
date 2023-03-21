@@ -1,6 +1,7 @@
 import { ApplyOptions } from '@sapphire/decorators';
 import type { ChatInputCommand } from '@sapphire/framework';
 import { Subcommand } from '@sapphire/plugin-subcommands';
+import { pluginList } from 'plugin-manager';
 
 @ApplyOptions<Subcommand.Options>({
 	description: 'For managing the plugin',
@@ -17,6 +18,15 @@ export class UserCommand extends Subcommand {
 	}
 
 	public async listPlugins(interaction: Subcommand.ChatInputCommandInteraction) {
-		return await interaction.reply({ content: 'You listed the plugins' });
+		
+		return await interaction.reply({ content: 'plugins listed in console' });
+		try{
+			this.container.logger.info(pluginList());
+		} catch (error) {
+			this.container.logger.fatal(error);
+
+			
+		}
+		
 	}
 }
