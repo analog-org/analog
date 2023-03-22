@@ -5,7 +5,7 @@ import { pluginList } from 'plugin-manager';
 
 @ApplyOptions<Subcommand.Options>({
 	description: 'For managing the plugin',
-	subcommands: [{ name: 'list', chatInputRun: 'listPlugins',  }]
+	subcommands: [{ name: 'list', chatInputRun: 'listPlugins' }]
 })
 export class UserCommand extends Subcommand {
 	public override registerApplicationCommands(registry: ChatInputCommand.Registry) {
@@ -18,14 +18,13 @@ export class UserCommand extends Subcommand {
 	}
 
 	public async listPlugins(interaction: Subcommand.ChatInputCommandInteraction) {
-		
+		const { client, logger } = this.container;
+		logger.info(pluginList())
+
 		return await interaction.reply({ content: 'plugins listed in console' });
-		try{
-			this.container.logger.info(pluginList());
-		} catch (error) {
-			this.container.logger.fatal(error);
-			
-		}
+
+		
+
 		
 	}
 }
