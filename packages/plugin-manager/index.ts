@@ -1,1 +1,1 @@
-export { pluginList } from './src/index';
+export * from './src/index';
