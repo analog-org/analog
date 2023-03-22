@@ -23,6 +23,7 @@
   "packageManager": "npm@8.19.2",
   "dependencies": {
     "dotenv-cli": "^6.0.0",
-    "prisma": "^4.11.0"
+    "prisma": "^4.11.0",
+    "plugin-manager": "*"
   }
 }

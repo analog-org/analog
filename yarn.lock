@@ -1482,21 +1482,20 @@
   "version" "1.0.0"
   dependencies:
     "@sapphire/decorators" "^6.0.0"
-    "@sapphire/discord-utilities" "^3.0.0"
-    "@sapphire/discord.js-utilities" "6.0.1"
+    "@sapphire/discord-utilities" "^3.0.1"
+    "@sapphire/discord.js-utilities" "6.0.4"
     "@sapphire/fetch" "^2.4.1"
-    "@sapphire/framework" "^4.0.2"
-    "@sapphire/plugin-api" "^5.0.0"
+    "@sapphire/framework" "^4.2.2"
+    "@sapphire/plugin-api" "^5.0.1"
     "@sapphire/plugin-editable-commands" "^3.0.0"
     "@sapphire/plugin-logger" "^3.0.1"
     "@sapphire/plugin-subcommands" "^4.0.0"
-    "@sapphire/time-utilities" "^1.7.8"
+    "@sapphire/time-utilities" "^1.7.9"
     "@sapphire/type" "^2.3.0"
     "@sapphire/utilities" "^3.11.0"
     "@skyra/env-utilities" "^1.1.0"
     "colorette" "^2.0.19"
-    "discord.js" "^14.7.1"
-    "plugin-manager" "*"
+    "discord.js" "^14.8.0"
 
 "ansi-colors@^4.1.1":
   "integrity" "sha512-/6w/C21Pm1A7aZitlI5Ni/2J6FFQN8i1Cvz3kHABAAbw93v/NlvKdVOqz7CCWz/3iv/JplRSEEZ83XION15ovw=="
@@ -4174,7 +4173,7 @@
   "resolved" "https://registry.npmjs.org/pify/-/pify-3.0.0.tgz"
   "version" "3.0.0"
 
-"plugin-manager@*", "plugin-manager@file:/workspaces/analog/packages/plugin-manager":
+"plugin-manager@file:/workspaces/analog/packages/plugin-manager":
   "resolved" "file:packages/plugin-manager"
   "version" "0.0.0"
 
