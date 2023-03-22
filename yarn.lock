@@ -4173,7 +4173,7 @@
   "resolved" "https://registry.npmjs.org/pify/-/pify-3.0.0.tgz"
   "version" "3.0.0"
 
-"plugin-manager@file:/workspaces/analog/packages/plugin-manager":
+"plugin-manager@*", "plugin-manager@file:/workspaces/analog/packages/plugin-manager":
   "resolved" "file:packages/plugin-manager"
   "version" "0.0.0"
 
