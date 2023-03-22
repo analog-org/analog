@@ -24,7 +24,6 @@ export class UserCommand extends Subcommand {
 			this.container.logger.info(pluginList());
 		} catch (error) {
 			this.container.logger.fatal(error);
-
 			
 		}
 		
