@@ -5,7 +5,11 @@ import { pluginList } from 'plugin-manager';
 
 @ApplyOptions<Subcommand.Options>({
 	description: 'For managing the plugin',
-	subcommands: [{ name: 'list', chatInputRun: 'listPlugins' }, { name: 'load', chatInputRun: 'loadPlugin' }, { name: 'unload', chatInputRun: 'unloadPlugin' }]
+	subcommands: [
+		{ name: 'list', chatInputRun: 'listPlugins' },
+		{ name: 'load', chatInputRun: 'loadPlugin' },
+		{ name: 'unload', chatInputRun: 'unloadPlugin' }
+	]
 })
 export class UserCommand extends Subcommand {
 	public override registerApplicationCommands(registry: ChatInputCommand.Registry) {
@@ -14,27 +18,43 @@ export class UserCommand extends Subcommand {
 				.setName(this.name)
 				.setDescription(this.description)
 				.addSubcommand((subcommand) => subcommand.setName('list').setDescription('Lists all plugins'))
+				.addSubcommand((subcommand) =>
+					subcommand
+						.setName('load')
+						.setDescription('Loads a plugin')
+						.addStringOption((option) =>
+							option.setName('name').setDescription('The name of the plugin').setRequired(true).setAutocomplete(true)
+						)
+				)
+				.addSubcommand((subcommand) =>
+					subcommand
+						.setName('unload')
+						.setDescription('Unloads a plugin')
+						.addStringOption((option) =>
+							option.setName('name').setDescription('The name of the plugin').setRequired(true).setAutocomplete(true)
+						)
+				)
 		);
 	}
 
 	public async listPlugins(interaction: Subcommand.ChatInputCommandInteraction) {
 		const { client, logger } = this.container;
-		logger.info(pluginList())
+		logger.info(pluginList());
 
-		return await interaction.reply({ content: 'plugins listed in console' });	
+		return await interaction.reply({ content: 'plugins listed in console' });
 	}
 
 	public async loadPlugin(interaction: Subcommand.ChatInputCommandInteraction) {
 		const { client, logger } = this.container;
-		logger.info(pluginList())
+		logger.info(pluginList());
 
-		return await interaction.reply({ content: 'plugins listed in console' });	
+		return await interaction.reply({ content: 'plugins listed in console' });
 	}
 
 	public async unloadPlugin(interaction: Subcommand.ChatInputCommandInteraction) {
 		const { client, logger } = this.container;
-		logger.info(pluginList())
+		logger.info(pluginList());
 
-		return await interaction.reply({ content: 'plugins listed in console' });	
+		return await interaction.reply({ content: 'plugins listed in console' });
 	}
 }
