@@ -19,8 +19,16 @@ export class AutocompleteHandler extends InteractionHandler {
 		switch (focusedOption.name) {
 			case 'name': {
 				const plugins = pluginList();
+				const filtered = plugins.filter((pl: string) => pl.toLowerCase().includes(focusedOption.value.toLowerCase()));
 
-				return this.some(plugins.map((pl) => ({ name: pl.name, value: pl.name })));
+				const filteredPlugin = filtered
+					.map((pl: string) => ({
+						name: pl,
+						value: pl
+					}))
+					.slice(0, 25);
+
+				return this.some(filteredPlugin);
 			}
 			default:
 				return this.none();
